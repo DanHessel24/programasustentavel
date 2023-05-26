@@ -1,0 +1,60 @@
+package SemTelaDeInicio;
+
+import Aps.Agri;
+import java.util.Scanner;
+
+/**
+ *
+ * @author giova
+ */
+public class AGriSus {
+    public static void main(String[] args){
+   
+        
+    Agri agri1 = new Agri();
+    agri1.nomeagri = "Seu Jose/";
+    agri1.endagri = "Rua do Seu Ze/";
+    agri1.prodagri = "Arroz/";
+    agri1.zonaagri = "Norte/";
+    
+    Agri agri2 = new Agri();
+    agri2.nomeagri = "Seu Joao/";
+    agri2.endagri = "Rua do Seu Joao/";
+    agri2.prodagri = "Feijao/";
+    agri2.zonaagri = "Sul/";
+       
+    String todinf = agri1.getTodinf();
+    String todin = agri2.getTodinf();
+        
+        
+     System.out.println("Digite O seu produto de interesse:");
+        Scanner sdc_recebe = new Scanner(System.in);
+        String sdc_armazena = sdc_recebe.nextLine();
+        if ("Arroz".equals(sdc_armazena)) {
+            System.out.println(todinf);
+        } else if ("Feijao".equals(sdc_armazena)){
+            System.out.println(todin);
+        } else {
+            System.out.println("Nao tem nenhum fonecedor cadastrado com esse produto");
+        }
+    }
+}
+
+Agricultor
+package Aps;
+
+/**
+ *
+ * @author giova
+ */
+public class Agri {
+    public String nomeagri;
+    public String endagri;
+    public String prodagri;
+    public String zonaagri;
+    public String todinf;
+    
+    public String getTodinf(){
+        return nomeagri + endagri + prodagri + zonaagri;
+    }
+}
